@@ -18,6 +18,28 @@ After the MN is up and running, you need to configure the desktop wallet accordi
 4. Wait for 15 confirmations.  
 5. Go to **Help -> "Debug Window - Console"**  
 6. Type the following command: **masternode outputs**  
+7. Go to  **Tools -> "Open Masternode Configuration File"**
+8. Add the following entry:
+```
+Alias Address Privkey TxHash TxIndex
+```
+* Alias: **MN1**
+* Address: **VPS_IP:PORT**
+* Privkey: **Masternode Private Key**
+* TxHash: **First value from Step 6**
+* TxIndex:  **Second value from Step 6**
+9. Save and close the file.
+10. Go to **Masternode Tab**. If you tab is not shown, please enable it from: **Settings - Options - Wallet - Show Masternodes Tab**
+11. Click **Update status** to see your node. If it is not shown, close the wallet and start it again. Make sure the wallet is un
+12. Select your MN and click **Start Alias** to start it.
+13. Alternatively, open **Debug Console** and type:
+```
+startmasternode "alias" "0" "MN1"
+``` 
+14. Login to your VPS and check your masternode status by running the following command:.
+```
+ox1-cli masternode status
+```
 ***
 
 ## Usage:
@@ -40,6 +62,7 @@ systemctl is-enabled ox1 #To check if 1 service is enabled on boot
 
 Any donation is highly appreciated
 
+**0x1**: zD2FjTGK4F1K1B9yMDayG57SH4A1U8SLVo  
 **BTC**: 3MQLEcHXVvxpmwbB811qiC1c6g21ZKa7Jh  
 **ETH**: 0x26B9dDa0616FE0759273D651e77Fe7dd7751E01E  
 **LTC**: LNZpK4rCd1JVSB3rGKTAnTkudV9So9zexB  

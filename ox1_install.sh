@@ -21,7 +21,7 @@ NC='\033[0m'
 
 
 function download_node() {
-  echo -e "Prepare to download ${GREEN}$COIN_NAME${NC}."
+  echo -e "Preparing to download ${GREEN}$COIN_NAME${NC}."
   cd $TMP_FOLDER >/dev/null 2>&1
   wget -q $COIN_TGZ
   compile_error
@@ -190,7 +190,7 @@ fi
 }
 
 function prepare_system() {
-echo -e "Prepare the system to install ${GREEN}$COIN_NAME${NC} master node."
+echo -e "Preparing the system to install ${GREEN}$COIN_NAME${NC} master node. That might take a while, so sit down and relax."
 apt-get update >/dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get update > /dev/null 2>&1
 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade >/dev/null 2>&1
